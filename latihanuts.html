@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perancangan Web</title>
+
+  <link rel="icon" type="image/png" href="image/boneka.jpg">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5b1bc;
+      padding: 50px;
+      text-align: center;
+    }
+
+    header {
+      background-color: #9f5887;
+      color: #ffffff;
+      padding: 50px;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .profile-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 20px auto;
+    }
+
+    .biodata-container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .biodata h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .biodata {
+      list-style-type: circle;
+      padding-left: 20px;
+      font-size: 18px;
+    }
+
+    .biodata li {
+      margin-bottom: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 30px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      text-align: left;
+      padding: 8px;
+      border: 1px solid black;
+      color: black;
+    }
+
+    th {
+      background-color: #333;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: white;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Tombol ke atas */
+    #toTopBtn {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      display: none;
+      background-color: #9f5887;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      z-index: 999;
+    }
+
+    #toTopBtn:hover {
+      background-color: #7a4069;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    Perancangan Web - Siti Nisfu Hayatin Nupus
+  </header>
+
+  <div class="profile-title">
+    <h2>My Profile</h2>
+  </div>
+
+  <img src="image/profile.jpeg" alt="Foto Profil" class="profile-photo">
+
+  <div class="biodata-container">
+    <h2>Biodata Mahasiswa</h2>
+    <ul class="biodata">
+      <li>Kampus: <a href="https://www.global.ac.id" target="_blank">Global Institute</a></li>
+      <li>NIM: 1234567890</li>
+      <li>Nama: Siti Nisfu Hayatin Nupus</li>
+      <li>Jurusan: Teknik Informatika</li>
+      <li>Semester: 2</li>
+      <li>Matakuliah: Pemrograman Web</li>
+    </ul>
+  </div>
+
+  <h2 id="tugas">List Tugas Perancangan Web</h2>
+  <p>Di bawah ini: beberapa mahasiswa yang sudah mengumpulkan tugas perancangan web</p>
+
+  <table>
+    <tr>
+      <th>No</th>
+      <th>Tugas</th>
+      <th>Link Code</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Membuat Table Zebra Stripes</td>
+      <td><a href="https://github.com/nupushayatii/1124160197-latihan7-html.git" target="_blank">Lihat Code</a></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Membuat Image Map</td>
+      <td><a href="https://github.com/nupushayatii/1124160197-latihan7-html.git" target="_blank">Lihat Code</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Membuat Cellpadding</td>
+      <td><a href="https://github.com/nupushayatii/1124160197-latihan7-html.git" target="_blank">Lihat Code</a></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Membuat Style CSS</td>
+      <td><a href="https://github.com/nupushayatii/1124160197-latihan7-html.git" target="_blank">Lihat Code</a></td>
+    </tr>
+  </table>
+ 
+  <h2>Peta Indonesia</h2>
+
+  <img src="image/peta.jpeg" usemap="#image-map" style="margin: 30px;">
+
+  <map name="image-map">
+    <area target="" alt="Pulau Aceh" title="Pulau Aceh" href="Aceh.html" coords="32,113,12,91" shape="rect">
+    <area target="" alt="Pulau Kalimantan Barat" title="Pulau Kalimantan Barat" href="kalimantan.html" coords="213,153,251,171" shape="rect">
+  </map>
+
+  
+  <button id="toTopBtn" onclick="scrollToTop()">Klik di sini untuk balik ke atas</button>
+
+  
+  <script>
+    window.onscroll = function() {
+      const btn = document.getElementById("toTopBtn");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
